@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homie - Buyer Registration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="buyerCss.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Homie</div>
+    </nav>
+
+    <div class="registration-container">
+        <h1 class="form-title">Buyer Registration</h1>
+        <form id="buyerForm" onsubmit="return validateForm(event)" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <div class="error" id="nameError">Please enter your full name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error" id="phoneError">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget" name="budget" required>
+                    <option value="">Select Budget Range</option>
+                    <option value="0-50L">Up to 50 Lakhs</option>
+                    <option value="50L-1Cr">50 Lakhs - 1 Crore</option>
+                    <option value="1Cr-2Cr">1 - 2 Crores</option>
+                    <option value="2Cr+">Above 2 Crores</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredLocation">Preferred Location</label>
+                <input type="text" id="preferredLocation" name="preferredLocation" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+
+    <script href="buyerjs.js"></script>
+    <script href="buyerApp.js"></script>
+</body>
+</html>

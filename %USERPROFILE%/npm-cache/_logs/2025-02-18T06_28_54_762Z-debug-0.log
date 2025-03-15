@@ -1,0 +1,27 @@
+0 verbose cli D:\node.exe D:\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.12.0
+3 silly config load:file:D:\node_modules\npm\npmrc
+4 silly config load:file:D:\.npmrc
+5 silly config load:file:C:\Users\user\.npmrc
+6 silly config load:file:D:\JavaScript\Real Estate Website\user\npm-global\etc\npmrc
+7 verbose title npm init
+8 verbose argv "init"
+9 verbose logfile logs-max:10 dir:D:\JavaScript\Real Estate Website\%USERPROFILE%\npm-cache\_logs\2025-02-18T06_28_54_762Z-
+10 verbose logfile D:\JavaScript\Real Estate Website\%USERPROFILE%\npm-cache\_logs\2025-02-18T06_28_54_762Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly package data {
+12 silly package data   name: 'real-estate-website',
+12 silly package data   version: '1.0.0',
+12 silly package data   main: 'script.js',
+12 silly package data   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+12 silly package data   author: '',
+12 silly package data   license: 'ISC',
+12 silly package data   description: ''
+12 silly package data }
+13 verbose cwd D:\JavaScript\Real Estate Website
+14 verbose os Windows_NT 10.0.22631
+15 verbose node v22.12.0
+16 verbose npm  v10.9.0
+17 verbose exit 0
+18 info ok
