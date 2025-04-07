@@ -110,30 +110,30 @@
 
     <div class="selection-container">
         <h1 class="selection-title">Choose Your Role</h1>
-        <a href="buyer.html">
+        <!-- <a href="buyer.html"> -->
             <div class="role-cards">
                 <div class="role-card buyer" onclick="selectRole('buyer')">
                     <i class="fas fa-home"></i>
                     <h3>I want to Buy</h3>
                     <p>Find and purchase your dream property with our extensive listings and expert guidance.</p>
                 </div>
-        </a>
+        <!-- </a> -->
         
-        <a href="seller.html">
+        <!-- <a href="seller.html"> -->
             <div class="role-card seller" onclick="selectRole('seller')">
                 <i class="fas fa-key"></i>
                 <h3>I want to Sell</h3>
                 <p>List your property and connect with potential buyers in your area.</p>
             </div>
-        </a>
+        <!-- </a> -->
             
-            <a href="renter.html">
+            <!-- <a href="renter.html"> -->
                 <div class="role-card renter" onclick="selectRole('renter')">
                     <i class="fas fa-building"></i>
                     <h3>I want to Rent</h3>
                     <p>Discover rental properties that match your preferences and budget.</p>
                 </div>
-            </a>
+            <!-- </a> -->
             
         </div>
     </div>
@@ -141,7 +141,7 @@
     <script>
         function selectRole(role) {
             // Redirect to the appropriate registration form based on role
-            window.location.href = `${role}-registration.html`;
+            window.location.href = `./${role}/${role}.html`;
         }
     </script>
 </body>

@@ -1,0 +1,306 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: white;
+  padding: 1rem 5%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.auth-buttons a {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.login {
+  color: #2c3e50;
+  margin-right: 1rem;
+}
+
+.signup {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('/api/placeholder/1920/1080');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 60px;
+}
+
+.search-container {
+  width: 80%;
+  max-width: 800px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+
+}
+
+.search-box {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.property-types {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.property-type {
+  padding: 0.5rem 1rem;
+  background: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Property Cards Section */
+.properties {
+  padding: 4rem 5%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.property-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.property-info {
+  padding: 1rem;
+}
+
+.property-price {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.property-location {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: white;
+  padding: 3rem 5%;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Buy Card Styles */
+.buy-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 2rem 5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.buy-card-img {
+  flex: 1;
+  max-width: 50%;
+}
+
+.buy-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buy-card-info {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.property-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.property-address,
+.property-price {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.buy-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: darkred;
+}
+
+.buy-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+}
+
+.buy-card {
+  display: flex;
+  width: 700px;
+  height: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  background-color: white;
+}
+
+.buy-card:hover {
+  transform: translateY(-5px);
+}
+
+.buy-card-img {
+  flex: 1;
+  overflow: hidden;
+}
+
+.buy-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buy-card-info {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.property-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.property-address,
+.property-price {
+  color: #666;
+}
+
+.buy-button {
+  padding: 0.7rem 1rem;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.buy-button:hover {
+  background-color: #c0392b;
+}

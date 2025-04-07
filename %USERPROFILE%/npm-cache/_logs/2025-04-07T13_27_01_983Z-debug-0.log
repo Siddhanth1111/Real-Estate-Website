@@ -1,0 +1,39 @@
+0 verbose cli D:\node.exe D:\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.12.0
+3 silly config load:file:D:\node_modules\npm\npmrc
+4 silly config load:file:D:\JavaScript\Real Estate Website\.npmrc
+5 silly config load:file:C:\Users\user\.npmrc
+6 silly config load:file:D:\JavaScript\Real Estate Website\user\npm-global\etc\npmrc
+7 verbose title npm create vite@latest
+8 verbose argv "create" "vite@latest"
+9 verbose logfile logs-max:10 dir:D:\JavaScript\Real Estate Website\%USERPROFILE%\npm-cache\_logs\2025-04-07T13_27_01_983Z-
+10 verbose logfile D:\JavaScript\Real Estate Website\%USERPROFILE%\npm-cache\_logs\2025-04-07T13_27_01_983Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/npm 283ms
+14 http fetch GET 200 https://registry.npmjs.org/create-vite 189ms (cache miss)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly idealTree buildDeps
+17 silly fetch manifest create-vite@6.3.1
+18 silly packumentCache full:https://registry.npmjs.org/create-vite cache-miss
+19 http fetch GET 200 https://registry.npmjs.org/create-vite 53ms (cache miss)
+20 silly packumentCache full:https://registry.npmjs.org/create-vite set size:undefined disposed:false
+21 silly placeDep ROOT create-vite@6.3.1 OK for:  want: 6.3.1
+22 silly reify moves {}
+23 silly audit bulk request { 'create-vite': [ '6.3.1' ] }
+24 silly tarball no local data for create-vite@https://registry.npmjs.org/create-vite/-/create-vite-6.3.1.tgz. Extracting by manifest.
+25 http fetch GET 200 https://registry.npmjs.org/create-vite/-/create-vite-6.3.1.tgz 280ms (cache miss)
+26 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 347ms
+27 silly audit report {}
+28 verbose cwd D:\JavaScript\Real Estate Website
+29 verbose os Windows_NT 10.0.22631
+30 verbose node v22.12.0
+31 verbose npm  v10.9.0
+32 notice
+32 notice New [31mmajor[39m version of npm available! [31m10.9.0[39m -> [34m11.2.0[39m
+32 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.2.0[39m
+32 notice To update run: [4mnpm install -g npm@11.2.0[24m
+32 notice  { force: true, [Symbol(proc-log.meta)]: true }
+33 verbose exit 0
+34 info ok
