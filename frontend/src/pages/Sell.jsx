@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+const token = localStorage.getItem('token');
 
 function Sell() {
   const [propertyName, setPropertyName] = useState('');
@@ -14,6 +14,7 @@ function Sell() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        "Authorization": `Bearer ${token}`
       },
       body: JSON.stringify({
         propertyName,

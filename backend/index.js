@@ -12,5 +12,18 @@ app.use("/sell",sellRouter);
 const buyRouter = require("./routes/buy")
 app.use("/buy",buyRouter);
 
+const buyerRouter = require("./routes/buyer")
+app.use("/buyer",buyerRouter)
 
-app.listen(3000);
+const sellerRouter = require("./routes/seller");
+app.use("/seller",sellerRouter);
+
+
+const authRouter = require("./routes/auth");
+app.use("/login",authRouter)
+
+const PORT = 3000;
+
+app.listen(PORT,(req,res)=>{
+    console.log("Server started");
+})

@@ -11,7 +11,7 @@ export function BuyCard({ propertyName, address, url, price }) {
         <h3 className="property-name">{propertyName}</h3>
         <h4 className="property-address">{address}</h4>
         <h4 className="property-price">{price}</h4>
-        <button className="buy-button">Buy Now</button>
+        <button className="buy-button">Contact Dealer</button>
       </div>
     </div>
   );

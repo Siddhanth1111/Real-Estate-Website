@@ -14,25 +14,22 @@ const sellerSchema = new mongoose.Schema({
     name : String,
     email : String,
     password : String,
-    lisenceNumber : Number,
+    licenseNumber : Number,
     phone : Number,
+    credits : {
+        type : Number,
+        default : 5
+    }
 })
 
 const buyerSchema = new mongoose.Schema({
     name : String,
     email : String,
-    username : String,
     password : String,
-
-
-})
-
-const renterSchema = new mongoose.Schema({
-    name :  String,
-    email : String,
-    password : String,
-    phone : Number,
-
+    credits : {
+        type : Number,
+        default : 5
+    }
 })
 
 const sellSchema = new mongoose.Schema({
@@ -45,12 +42,10 @@ const sellSchema = new mongoose.Schema({
 
 const Seller = mongoose.model('seller',sellerSchema);
 const Buyer = mongoose.model('buyer',buyerSchema);
-const Renter = mongoose.model('renter',renterSchema);
 const Sell = mongoose.model('sell',sellSchema);
 
 module.exports = {
     Seller,
     Buyer,
-    Renter,
     Sell
 }

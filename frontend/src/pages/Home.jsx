@@ -1,25 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../components/Navbar'
 
 
 function Home() {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">Homie</div>
-        <div className="nav-links">
-          <Link to="/buy">Buy</Link>
-          <Link to="/rent">Rent</Link>
-          <Link to="/sell">Sell</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-        <div className="auth-buttons">
-          <Link to="/login" className="login">Login</Link>
-          <Link to="/signup/options" className="signup">Sign Up</Link>
-        </div>
-      </nav>
+      <Navbar></Navbar>
 
       {/* Hero Section */}
       <section className="hero">

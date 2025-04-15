@@ -1,16 +1,26 @@
-
+/* ========================================
+   Global Styles
+======================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navbar Styles */
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  transition: background-color 0.5s ease;
+}
+
+/* ========================================
+   Navbar
+======================================== */
 .navbar {
-  background-color: white;
+  background-color: #161b22;
   padding: 1rem 5%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,12 +28,18 @@
   width: 100%;
   top: 0;
   z-index: 1000;
+  animation: slideDown 0.6s ease forwards;
+}
+
+@keyframes slideDown {
+  from { top: -100px; }
+  to { top: 0; }
 }
 
 .logo {
   font-size: 2rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: #58a6ff;
 }
 
 .nav-links {
@@ -33,30 +49,44 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #2c3e50;
+  color: #c9d1d9;
   font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #58a6ff;
 }
 
 .auth-buttons a {
+  
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
 }
 
 .login {
-  color: #2c3e50;
+  color: #58a6ff;
   margin-right: 1rem;
 }
 
-.signup {
-  background-color: #3498db;
-  color: white;
+.signup-container{
+  display: flex;
+  gap: 5px ;
 }
 
-/* Hero Section */
+.signup {
+  background-color: #238636;
+  color: white;
+  height : 40%;
+}
+
+/* ========================================
+   Hero Section
+======================================== */
 .hero {
   height: 80vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  background: linear-gradient(rgba(13,17,23,0.8), rgba(13,17,23,0.8)),
               url('/api/placeholder/1920/1080');
   background-size: cover;
   background-position: center;
@@ -67,25 +97,39 @@
   text-align: center;
   color: white;
   padding-top: 60px;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .search-container {
   width: 80%;
   max-width: 800px;
-  background: white;
+  background: #161b22;
   padding: 2rem;
   border-radius: 8px;
   margin-top: 2rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  animation: floatUp 1s ease forwards;
+}
 
+@keyframes floatUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .search-box {
   width: 100%;
   padding: 1rem;
   font-size: 1.1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #30363d;
   border-radius: 4px;
   margin-bottom: 1rem;
+  background-color: #0d1117;
+  color: #c9d1d9;
 }
 
 .property-types {
@@ -97,12 +141,20 @@
 
 .property-type {
   padding: 0.5rem 1rem;
-  background: black;
+  background: #21262d;
   border-radius: 20px;
   cursor: pointer;
+  color: #58a6ff;
+  transition: background 0.3s;
 }
 
-/* Property Cards Section */
+.property-type:hover {
+  background: #30363d;
+}
+
+/* ========================================
+   Property Cards Section
+======================================== */
 .properties {
   padding: 4rem 5%;
 }
@@ -110,7 +162,7 @@
 .section-title {
   text-align: center;
   margin-bottom: 2rem;
-  color: #2c3e50;
+  color: #58a6ff;
 }
 
 .property-grid {
@@ -120,15 +172,16 @@
 }
 
 .property-card {
-  border: 1px solid #ddd;
+  border: 1px solid #30363d;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s;
+  background-color: #161b22;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .property-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 .property-image {
@@ -143,19 +196,237 @@
 
 .property-price {
   font-size: 1.5rem;
-  color: #2c3e50;
   font-weight: bold;
+  color: #58a6ff;
 }
 
 .property-location {
-  color: #666;
+  color: #8b949e;
   margin-top: 0.5rem;
 }
 
-/* Footer */
-.footer {
-  background: #2c3e50;
+/* ========================================
+   Buy Cards
+======================================== */
+.buy-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+}
+
+.buy-card {
+  display: flex;
+  width: 700px;
+  height: 250px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #161b22;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.buy-card:hover {
+  transform: scale(1.03);
+}
+
+.buy-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buy-card-info {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.property-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #58a6ff;
+}
+
+.property-address {
+  color: #8b949e;
+}
+
+.buy-button {
+  padding: 0.7rem 1rem;
+  background-color: #238636;
+  border: none;
+  border-radius: 4px;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #2ea043;
+}
+
+/* ========================================
+   Role Selection
+======================================== */
+.selection-container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.selection-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #58a6ff;
+  margin-bottom: 40px;
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .role-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+.role-card {
+  background: #161b22;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.role-card i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.role-card.buyer i { color: #58a6ff; }
+.role-card.seller i { color: #1f6feb; }
+.role-card.renter i { color: #bc8cff; }
+
+.role-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #c9d1d9;
+}
+
+.role-card p {
+  color: #8b949e;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ========================================
+   Inputs & Forms
+======================================== */
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filter-input {
+  padding: 10px 15px;
+  width: 300px;
+  font-size: 16px;
+  border: 2px solid #30363d;
+  border-radius: 10px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 2px 10px rgba(88, 166, 255, 0.4);
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d1117;
+}
+
+.form-container {
+  background: #161b22;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #58a6ff;
+  font-size: 24px;
+}
+
+.form-input {
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1.5px solid #30363d;
+  border-radius: 8px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  transition: border 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.form-button {
+  padding: 12px;
+  background-color: #238636;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #2ea043;
+}
+
+/* ========================================
+   Footer
+======================================== */
+.footer {
+  background: #161b22;
+  color: #c9d1d9;
   padding: 3rem 5%;
   margin-top: 2rem;
 }
@@ -171,136 +442,153 @@
 }
 
 .footer-section a {
-  color: white;
+  color: #58a6ff;
   text-decoration: none;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-/* Buy Card Styles */
-.buy-card {
+
+
+
+/* Login Page Styles */
+.login-page {
   display: flex;
-  border: 1px solid #ddd;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0d1117;
+}
+
+.login-container {
+  background-color: #161b22;
+  padding: 2rem;
   border-radius: 8px;
-  overflow: hidden;
-  margin: 2rem 5%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.buy-card-img {
-  flex: 1;
-  max-width: 50%;
-}
-
-.buy-card-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.buy-card-info {
-  flex: 1;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+h2 {
+  text-align: center;
+  color: hotpink;
+  margin-bottom: 1.5rem;
 }
 
-.property-name {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #2c3e50;
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  background-color: #0d1117;
+  color: #c9d1d9;
   margin-bottom: 1rem;
 }
 
-.property-address,
-.property-price {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 0.5rem;
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #ff69b4;
 }
 
-.buy-button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: red;
-  color: white;
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ff69b4;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 4px;
+  color: black;
   font-weight: bold;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.buy-button:hover {
-  background-color: darkred;
+button:hover {
+  background-color: #ff85c1;
 }
 
-.buy-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 4rem 5%;
-}
-
-.buy-card {
-  display: flex;
-  width: 700px;
-  height: 250px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  background-color: white;
-}
-
-.buy-card:hover {
-  transform: translateY(-5px);
-}
-
-.buy-card-img {
-  flex: 1;
-  overflow: hidden;
-}
-
-.buy-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.buy-card-info {
-  flex: 1;
-  padding: 1rem;
+form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.property-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2c3e50;
+/* For better mobile responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  button {
+    font-size: 1rem;
+  }
 }
 
-.property-address,
-.property-price {
-  color: #666;
+
+.credits-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.buy-button {
-  padding: 0.7rem 1rem;
-  background-color: #e74c3c;
-  border: none;
-  border-radius: 4px;
+.credits-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.packages-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.package-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 25px 20px;
+  width: 200px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.package-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.package-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.package-card p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.package-card button {
+  background-color: #007bff;
   color: white;
-  font-weight: bold;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  align-self: flex-start;
 }
 
-.buy-button:hover {
-  background-color: #c0392b;
+.package-card button:hover {
+  background-color: #0056b3;
 }
