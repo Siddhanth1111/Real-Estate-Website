@@ -8,7 +8,7 @@ function Buy(){
 
     useEffect(()=>{
         fetch("http://localhost:3000/buy")
-        .then((response)=>response.json())
+        .then((response)=>response.json())    
         .then((data)=>{
             setList(data);
         })
@@ -21,7 +21,9 @@ function Buy(){
     return(
         
         <div>
-            
+        <div style={{padding : 50}} >
+
+        </div>
 
     <div className="input-container">
     <input 
@@ -31,14 +33,19 @@ function Buy(){
     />
     </div>
 
-
+            <div className="property-container">
             {filteredList.map((each)=>(
-                <BuyCard propertyName={each.propertyName}
+                <BuyCard 
+                    propertyId = {each._id}
+                    propertyName={each.propertyName}
                     address={each.address}
                     url = {each.url}
                     price = {each.price}
+                    userId = {each.userId}
                 ></BuyCard>
             ))}
+            </div>
+            
         </div>
     )
 }

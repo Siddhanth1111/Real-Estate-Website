@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { Buyer } = require('../db');
 const { Seller } = require('../db');
 
-const JWT_SECRET = 'your_secret_key'; // put in .env in real projects
+const JWT_SECRET = 'your_jwt_secret'; // put in .env in real projects
 
 router.post("/", async (req, res) => {
   const { email, password } = req.body;
@@ -30,8 +30,8 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ message: 'Invalid email or password' });
     }
 
-    const token = jwt.sign({ id: user._id, role, name: user.name }, JWT_SECRET, { expiresIn: '1h' });
-
+    const token = jwt.sign({ userId: user._id, role, name: user.name }, JWT_SECRET, { expiresIn: '1h' });
+    console.log(token);
     res.json({ token, role, name: user.name });
 
   } catch (err) {

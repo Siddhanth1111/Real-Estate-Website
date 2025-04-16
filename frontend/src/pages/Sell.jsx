@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-const token = localStorage.getItem('token');
+const user = JSON.parse(localStorage.getItem('user'));
+const token = user.token;
+
 
 function Sell() {
   const [propertyName, setPropertyName] = useState('');
@@ -14,7 +16,7 @@ function Sell() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "Authorization": `Bearer ${token}`
+        "Authorization": `Bearer ${token}` // yeh header seller ka hai (isse access karke id daalte hai database mein)
       },
       body: JSON.stringify({
         propertyName,

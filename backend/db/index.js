@@ -36,7 +36,8 @@ const sellSchema = new mongoose.Schema({
     propertyName : String,
     address : String,
     url : String,
-    price : Number
+    price : Number,
+    userId : String
 })
 
 

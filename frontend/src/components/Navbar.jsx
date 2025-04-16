@@ -1,17 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useUser } from '../Context/UserContext';
 
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
-  const [credit,setCredit] = useState(5);
-
-  useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []);
+  
+  const {user, setUser, credits, loading} = useUser();
+  const navigate = useNavigate();
 
   
 
@@ -21,6 +16,7 @@ const Navbar = () => {
   setUser(null); // Update the user state to null
 };
 
+if(loading) return null;
 
   return (
     <div className="navbar">
@@ -39,7 +35,9 @@ const Navbar = () => {
             <Link to="/profile" className="login">Hi, {user.name || "User"}</Link>
             <div className='signup-container'>
             <button className="signup" onClick={handleLogout}>Logout</button>
-            <Link to="/credits" style = {{backgroundColor : "red", color : "white"}} >{credit} </Link>
+            <button onClick={()=>{
+              navigate("/credits")
+            }} style = {{backgroundColor : "red", color : "white"}} >{credits} </button>
             </div>
             
           </>

@@ -22,6 +22,12 @@ app.use("/seller",sellerRouter);
 const authRouter = require("./routes/auth");
 app.use("/login",authRouter)
 
+const creditsRouter = require("./routes/credits");
+app.use("/credits",creditsRouter)
+
+const propertyRouter = require("./routes/property");
+app.use("/property",propertyRouter)
+
 const PORT = 3000;
 
 app.listen(PORT,(req,res)=>{

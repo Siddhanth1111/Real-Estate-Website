@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       {/* Navbar */}
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       {/* Hero Section */}
       <section className="hero">

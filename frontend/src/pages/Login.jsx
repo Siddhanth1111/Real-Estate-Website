@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../Context/UserContext';
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const {setUser} = useUser();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ const Login = () => {
       const data = await res.json();
       if (res.ok) {
         localStorage.setItem('user', JSON.stringify({ name: data.name, token: data.token, role : data.role}));// Store token
+        setUser({ name: data.name, token: data.token, role : data.role})
         navigate('/'); // Redirect after login
       } else {
             alert(data.msg);
