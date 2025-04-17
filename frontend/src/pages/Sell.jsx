@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 const user = JSON.parse(localStorage.getItem('user'));
-const token = user.token;
+const token = user?.token;
 
 
 function Sell() {
@@ -11,7 +11,7 @@ function Sell() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     fetch('http://localhost:3000/sell', {
       method: 'POST',
       headers: {

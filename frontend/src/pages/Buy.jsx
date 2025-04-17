@@ -13,6 +13,8 @@ function Buy(){
             setList(data);
         })
     },[]);
+
+    
     
     const filteredList = useMemo(()=>{
         return list.filter(x => x.propertyName.toLowerCase().includes(filter.toLowerCase()))

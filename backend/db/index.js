@@ -40,13 +40,23 @@ const sellSchema = new mongoose.Schema({
     userId : String
 })
 
+const rentSchema = new mongoose.Schema({
+    propertyName : String,
+    address : String,
+    description : String,
+    url : String,
+    price : Number,
+    userId : String
+})
 
 const Seller = mongoose.model('seller',sellerSchema);
 const Buyer = mongoose.model('buyer',buyerSchema);
 const Sell = mongoose.model('sell',sellSchema);
+const Rent = mongoose.model('rent',rentSchema);
 
 module.exports = {
     Seller,
     Buyer,
-    Sell
+    Sell,
+    Rent
 }

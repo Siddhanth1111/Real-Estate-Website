@@ -13,6 +13,8 @@ import Login from './pages/Login'
 import CreditsPage from './pages/Credits'
 import Navbar from './components/Navbar'
 import Property from './pages/Property'
+import Contact from './pages/Contact'
+import Rent from './pages/Rent'
 
 function App() {
   
@@ -35,6 +37,8 @@ function App() {
       <Route path="/login" element = {<Login></Login>}></Route>
       <Route path="/credits" element = {<CreditsPage></CreditsPage>}></Route>
       <Route path="/property/:propertyId" element = {<Property></Property>}></Route>
+      <Route path="/contact" element = {<Contact></Contact>}></Route>
+      <Route path="/rent" element = {<Rent></Rent>}></Route>
       
     </Routes>
     

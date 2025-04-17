@@ -7,12 +7,13 @@ router.get("/",async(req,res)=>{
     res.json(data);
 })
 
-router.post("/name",async(req,res)=>{
+router.post("/details",async(req,res)=>{
     const userId = req.body.userId;
     const user = await Seller.findById(userId);
-    const sellerName = user.name
     res.json({
-        sellerName
+        name : user.name,
+        email : user.email,
+        phone : user.phone
     })
 })
 

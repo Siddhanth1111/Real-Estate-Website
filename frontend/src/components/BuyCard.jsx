@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import DealerContactModal from "./DealerContactModal";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 
 
 
 export function BuyCard({ propertyName, address, url, price, userId, propertyId }) {
   const navigate = useNavigate();
   
-  const [sellerName,setSellerName] = useState(" ");
+  const [sellerDetail,setSellerDetail] = useState({});
 
   useEffect(()=>{
-    fetch("http://localhost:3000/buy/name",{
+    fetch("http://localhost:3000/buy/details",{
       method : "post",
       headers : {
         "Content-type" : "application/json"
@@ -22,7 +22,7 @@ export function BuyCard({ propertyName, address, url, price, userId, propertyId 
     })
     .then((response)=>response.json())
     .then((data)=>{
-      setSellerName(data.sellerName)
+      setSellerDetail(data);
     })
   },[])
 
@@ -36,9 +36,9 @@ export function BuyCard({ propertyName, address, url, price, userId, propertyId 
       <div className="buy-card-info">
         <h3 className="property-name">{propertyName}</h3>
         <h4 className="property-address">{address}</h4>
-        <h4 className="property-price">{price} INR</h4>
-        <h4> Posted by {sellerName} </h4>
-        <DealerContactModal></DealerContactModal>
+        <h4 className="property-price">Price: ₹{Number(price).toLocaleString("en-IN")}</h4>
+        <h4> Posted by {sellerDetail.name} </h4>
+        <DealerContactModal sellerPhone = {sellerDetail.phone} sellerMail = {sellerDetail.email} sellerName={sellerDetail.name} ></DealerContactModal>
       </div>
     </div>
   );

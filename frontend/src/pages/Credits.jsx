@@ -1,17 +1,24 @@
 import { useState } from "react";
+import { useUser } from "../Context/UserContext";
 
 
 const CreditsPage = () => {
-  const [credits, setCredits] = useState(5);
-
+  
+  const {credits, setCredits} = useUser();
   const handleBuyCredits = async (amount, price) => {
     // Later integrate Razorpay here
     alert(`Initiate payment of ₹${price} for ${amount} credits`);
-    setCredits((prev) => prev + amount);
+    setCredits(credits + amount);
   };
 
   return (
-    <div className="credits-page">
+    <div>
+
+      <div style={{padding:60}}> 
+
+      </div>
+
+      <div className="credits-page">
       <h2 className="credits-title">Your Credits: {credits}</h2>
 
       <div className="packages-container">
@@ -34,6 +41,8 @@ const CreditsPage = () => {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 };
 

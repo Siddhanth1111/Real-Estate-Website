@@ -8,6 +8,8 @@ function Property() {
   const { propertyId } = useParams();
   const [property, setProperty] = useState([]);
 
+  
+
   useEffect(() => {
     fetch(`http://localhost:3000/property/${propertyId}`)
       .then(res => res.json())
@@ -15,7 +17,32 @@ function Property() {
       .catch(err => console.error('Error fetching property:', err));
   }, [propertyId]);
 
+  
+
   if (!property) return <div className="loader">Loading...</div>;
+
+
+  const [sellerDetail,setSellerDetail] = useState({});
+  
+    useEffect(()=>{
+
+      if (!property.userId) return; // Wait until property is loaded
+
+      fetch("http://localhost:3000/buy/details",{
+        method : "post",
+        headers : {
+          "Content-type" : "application/json"
+        },
+        body:JSON.stringify({
+          userId : property.userId
+        })
+  
+      })
+      .then((response)=>response.json())
+      .then((data)=>{
+        setSellerDetail(data);
+      })
+    },[property])
 
   return (
     <div>
@@ -41,7 +68,7 @@ function Property() {
             <p>{property.description || "No additional description provided."}</p>
             </div>
 
-            <DealerContactModal></DealerContactModal>
+            <DealerContactModal sellerPhone = {sellerDetail.phone} sellerMail = {sellerDetail.email} sellerName = {sellerDetail.name} ></DealerContactModal>
         </div>
         </div>
     </div>

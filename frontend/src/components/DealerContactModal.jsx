@@ -5,7 +5,7 @@ import { useUser } from '../Context/UserContext';
 // Important: Bind modal to your appElement
 Modal.setAppElement('#root');
 
-const DealerContactModal = () => {
+const DealerContactModal = ({sellerMail, sellerPhone,sellerName}) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
     const {user, credits,setCredits} = useUser();
   
@@ -83,12 +83,13 @@ const DealerContactModal = () => {
         <div onClick={(e)=>{
           e.stopPropagation();
         }}>
-        <h2>Dealer Contact</h2>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
-        <p><strong>Email:</strong> dealer@example.com</p>
+        <h2 style={{color : "blue"}}>Dealer Contact</h2>
+        <p style={{color : "black"}}><strong>Name:</strong> {sellerName}</p>
+        <p style={{color : "black"}} ><strong>Phone:</strong> +91 {sellerPhone}</p>
+        <p style={{color : "black"}}><strong>Email:</strong> {sellerMail}</p>
         <button 
           onClick={closeModal} 
-          style={{ marginTop: '20px', padding: '10px', borderRadius: '4px' }}
+          style={{ marginTop: '20px', padding: '10px', borderRadius: '4px', backgroundColor : "blue", color : "white" }}
         >
           Close
         </button>

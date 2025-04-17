@@ -40,6 +40,7 @@ body {
   font-size: 2rem;
   font-weight: bold;
   color: #58a6ff;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -674,4 +675,146 @@ form {
   text-align: center;
   font-size: 1.5rem;
   padding: 100px;
+}
+
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.contact-details p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contact-details a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2980b9;
+}
+
+
+
+.rent-container {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.rent-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+.rent-form input,
+.rent-form textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.rent-form input:focus,
+.rent-form textarea:focus {
+  border-color: #007bff;
+}
+
+.rent-form textarea {
+  resize: vertical;
+}
+
+.rent-form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.rent-form button:hover {
+  background-color: #218838;
 }

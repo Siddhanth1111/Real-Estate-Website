@@ -46,9 +46,9 @@ function Home() {
           </div>
           <div className="footer-section">
             <h3>Follow Us</h3>
-            <a href="#"><i className="fab fa-facebook"></i> Facebook</a>
-            <a href="#"><i className="fab fa-twitter"></i> Twitter</a>
-            <a href="#"><i className="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.instagram.com/sid_chauhan1111/" target='_blank'><i className="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/sid_chauhan1111/" target='_blank'><i className="fab fa-twitter"></i> Twitter</a>
+            <a href="https://www.instagram.com/sid_chauhan1111/" target='_blank'><i className="fab fa-instagram"></i> Instagram</a>
           </div>
         </div>
       </footer>

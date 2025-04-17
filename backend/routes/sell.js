@@ -10,7 +10,6 @@ router.post("/",async(req,res)=>{
     const url = req.body.url;
     const price = req.body.price;
     const authHeader = req.headers.authorization;
-    console.log(authHeader);
     const token = authHeader.split(" ")[1];
     let decoded;
     try{

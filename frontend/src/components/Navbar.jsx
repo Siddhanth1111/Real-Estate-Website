@@ -20,8 +20,7 @@ if(loading) return null;
 
   return (
     <div className="navbar">
-      <div className="logo">Homie</div>
-
+      <Link to="/" className='logo'>Homie</Link>
       <div className="nav-links">
         <Link to="/buy">Buy</Link>
         <Link to="/rent">Rent</Link>
