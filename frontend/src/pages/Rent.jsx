@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo} from "react";
 import { useUser } from "../Context/UserContext";
+import { BuyCard } from "../components/BuyCard";
+import { RentCard } from "../components/RentCard";
 
 function Rent() {
   const { user, loading } = useUser();
@@ -60,6 +62,24 @@ function Rent() {
     }
   };
 
+      const [list,setList] = useState([]);
+      const [filter,setFilter] = useState("");
+  
+      useEffect(()=>{
+          fetch("http://localhost:3000/rent",{
+          })
+          .then((response)=>response.json())    
+          .then((data)=>{
+              setList(data);
+          })
+      },[]);
+  
+      
+      
+      const filteredList = useMemo(()=>{
+          return list.filter(x => x.propertyName.toLowerCase().includes(filter.toLowerCase()))
+      },[filter,list])
+
   return (
     <div className="rent-container" style={{ padding: "80px 20px" }}>
       <h2>Post Property for Rent</h2>
@@ -103,6 +123,37 @@ function Rent() {
           Post Property
         </button>
       </form>
+
+
+    <div>
+            <div style={{padding : 50}} >
+    
+            </div>
+    
+        <div className="input-container">
+        <input 
+            className="filter-input"
+            placeholder="Search property..."
+            onChange={(e) => setFilter(e.target.value)} 
+        />
+        </div>
+    
+                <div className="property-container">
+                {filteredList.map((each)=>(
+                    <RentCard 
+                        propertyId = {each._id}
+                        propertyName={each.propertyName}
+                        address={each.address}
+                        url = {each.url}
+                        price = {each.price}
+                        userId = {each.userId}
+
+                    ></RentCard>
+                ))}
+                </div>
+                
+            </div>
+
     </div>
   );
 }
